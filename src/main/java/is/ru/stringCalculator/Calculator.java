@@ -4,7 +4,9 @@ public class Calculator {
 
     public static int add(String text){
         if(text == "")  return 0;
-        return 1;
+        else{
+            return Integer.parseInt(text);
+        }
 
     }
 }
