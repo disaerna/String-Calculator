@@ -4,9 +4,11 @@ public class Calculator {
 
     public static int add(String text){
         if(text == "")  return 0;
-        else{
-            return Integer.parseInt(text);
+        if(text.contains(",")){
+            String[] numbers;
+            numbers = text.split(",");
+            return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
         }
-
+        return Integer.parseInt(text);
     }
 }
