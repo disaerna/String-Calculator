@@ -6,7 +6,12 @@ public class Calculator {
         if(text == "")  return 0;
         if(text.contains(",")){
             String[] numbers;
-            numbers = text.split(",");
+            if(text.contains("\n")){
+                numbers = text.split("\n|,");
+            }
+            else{
+                numbers = text.split(",");
+            }
             int ret = 0;
             for(int i=0; i<numbers.length; i++){
                 ret += Integer.parseInt(numbers[i]);
