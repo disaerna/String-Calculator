@@ -59,4 +59,8 @@ public class CalculatorTest {
             assertEquals("Numbers bigger than 1000 are ignored", e.getMessage());
         }
     }
+    @Test
+    public void testDifferentDelimeter(){
+        assertEquals(3, Calculator.add("//;\n1;2"));
+    }
 }
