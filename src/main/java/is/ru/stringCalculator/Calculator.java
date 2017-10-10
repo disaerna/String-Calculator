@@ -20,6 +20,9 @@ public class Calculator {
                 if(Integer.parseInt(numbers[i]) < 0){
                      negatives.add(Integer.parseInt(numbers[i]));
                 }
+                if(Integer.parseInt(numbers[i]) > 1000){
+                    continue;
+                }
                 ret += Integer.parseInt(numbers[i]);
             }
             if(negatives.size() > 0 ){
@@ -38,6 +41,9 @@ public class Calculator {
         }
         if(Integer.parseInt(text) < 0){
             throw new IllegalArgumentException("Negatives not allowed: " + text);            
+        }
+        if(Integer.parseInt(text) > 1000){
+            throw new IllegalArgumentException("Numbers bigger than 1000 are ignored");
         }
         return Integer.parseInt(text);
     }

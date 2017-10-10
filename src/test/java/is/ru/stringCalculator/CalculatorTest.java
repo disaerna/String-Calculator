@@ -45,4 +45,18 @@ public class CalculatorTest {
             assertEquals("Negatives not allowed: -2", e.getMessage());
         }
     }
+    @Test
+    public void testNumbersLargerThan1000Ignored(){
+        assertEquals(2, Calculator.add("1001,2"));
+    }
+    @Test
+    public void testOneNumberLargerThan1000(){
+        try{
+            Calculator.add("1001");
+            fail("testOneNumberLargerThan1000 failed");
+        }
+        catch(IllegalArgumentException e){
+            assertEquals("Numbers bigger than 1000 are ignored", e.getMessage());
+        }
+    }
 }
